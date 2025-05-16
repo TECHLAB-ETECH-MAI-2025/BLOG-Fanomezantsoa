@@ -41,6 +41,7 @@ class Article
     {
         $this->categories = new ArrayCollection();
         $this->comments = new ArrayCollection();
+        $this->createdAt = new \DateTimeImmutable;
     }
 
     public function getId(): ?int
