@@ -1,5 +1,30 @@
 {
   "devDependencies": {
+    "@symfony/webpack-encore": "github:symfony/webpack-encore",
     "bootstrap": "^5.3.6"
-  }
+  },
+  "name": "blog",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TECHLAB-ETECH-MAI-2025/BLOG-Fanomezantsoa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TECHLAB-ETECH-MAI-2025/BLOG-Fanomezantsoa/issues"
+  },
+  "homepage": "https://github.com/TECHLAB-ETECH-MAI-2025/BLOG-Fanomezantsoa#readme",
+  "description": ""
 }
