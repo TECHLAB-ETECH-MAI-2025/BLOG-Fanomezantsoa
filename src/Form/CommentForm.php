@@ -8,20 +8,30 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class CommentForm extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('author')
-            ->add('content')
-            ->add('createdAt', null, [
-                'widget' => 'single_text',
+            ->add('author', TextType::class, [
+                'label' => 'Votre nom',
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Entrez votre nom',
+                    'required' => true
+                ]
             ])
-            ->add('article', EntityType::class, [
-                'class' => Article::class,
-                'choice_label' => 'id',
+            ->add('content',TextareaType::class, [
+                'label' => 'Votre commentaire',
+                'attr' => [
+                    'class' => 'form-control',
+                    'row' => 4,
+                    'placeholder' => 'Ecrivez votre commentaire ici ...',
+                    'required' => true
+                ]
             ])
         ;
     }
